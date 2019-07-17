@@ -1,0 +1,50 @@
+Run options: --seed 8780
+
+# Running:
+
+..E
+
+Error:
+UsersIndexTest#test_index_as_admin_including_pagination_and_delete_links:
+NoMethodError: undefined method `email' for nil:NilClass
+    test/test_helper.rb:25:in `log_in_as'
+    test/integration/users_index_test.rb:24:in `block in <class:UsersIndexTest>'
+
+bin/rails test test/integration/users_index_test.rb:23
+
+.....................E
+
+Error:
+SessionsHelperTest#test_current_user_returns_nil_when_remember_digest_is_wrong:
+ArgumentError: wrong number of arguments (given 1, expected 2)
+    app/models/user.rb:30:in `authenticated?'
+    app/helpers/sessions_helper.rb:25:in `current_user'
+    test/helpers/sessions_helper_test.rb:17:in `block in <class:SessionsHelperTest>'
+
+bin/rails test test/helpers/sessions_helper_test.rb:15
+
+E
+
+Error:
+SessionsHelperTest#test_current_user_returns_right_user_when_session_is_nil:
+ArgumentError: wrong number of arguments (given 1, expected 2)
+    app/models/user.rb:30:in `authenticated?'
+    app/helpers/sessions_helper.rb:25:in `current_user'
+    test/helpers/sessions_helper_test.rb:11:in `block in <class:SessionsHelperTest>'
+
+bin/rails test test/helpers/sessions_helper_test.rb:10
+
+.E
+
+Error:
+UserTest#test_authenticated?_should_return_false_for_a_user_with_nil_digest:
+ArgumentError: wrong number of arguments (given 1, expected 2)
+    app/models/user.rb:30:in `authenticated?'
+    test/models/user_test.rb:12:in `block in <class:UserTest>'
+
+bin/rails test test/models/user_test.rb:11
+
+
+
+Finished in 4.220528s, 6.6342 runs/s, 16.8225 assertions/s.
+28 runs, 71 assertions, 0 failures, 4 errors, 0 skips
